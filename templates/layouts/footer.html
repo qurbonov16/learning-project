@@ -1,0 +1,71 @@
+{% load static %}
+
+{% block extra_css %}
+    <style>
+        footer .footer-col .foot-link i {
+            color: #fff;
+            background-color: rgb(21, 21, 100);
+            padding: 10px 13px;
+            border: 1px solid rgb(21, 21, 100);
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        footer .footer-col .foot-link i:hover {
+            color: #fdc93b;
+            border: 1px solid rgb(21, 21, 100);
+            cursor: pointer;
+        }
+    </style>
+{% endblock %}
+
+{% block footer %}
+    <!-- Footer -->
+    <footer>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Website</li>
+            <li>Web Services</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Imperial Partners</h3>
+            <li>Imperial College</li>
+            <li>Academic Healts</li>
+            <li>Institue Tagine</li>
+            <li>Science Center</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Informations For</h3>
+            <li>Prospective Students</li>
+            <li>Alumini</li>
+            <li>Teachers and Supports</li>
+            <li>Media main page</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Get More Infos </h3>
+
+            <div class="foot-link">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script>
+        $('#menu-img').click(function () {
+            $('nav .navigation ul').addClass('active')
+        });
+
+        $('#menu-close').click(function () {
+            $('nav .navigation ul').removeClass('active')
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+{% block extra_css %}
+
+{#    <link rel="stylesheet" href="{% static 'main/css/new.css' %}">#}
+    <style>
+
+        body {
+            {#background-color: #0080ff;#}
+            background-image: linear-gradient(rgba(99, 112, 168, 0.5), rgba(81, 91, 233, 0.5)), url({% static 'main/imgs/back.jpg' %});
+        }
+        .form  {
+            background-color: #66ffff;
+            width: 40%;
+            margin: 0 auto;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            padding-top: 50px;
+            padding-left: 100px;
+            padding-bottom: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+
+        .form h3 {
+            padding-bottom: 10px;
+        }
+
+        .form input {
+            margin: 15px 0;
+            padding: 15px 10px;
+            border: 1px solid rgb(84, 40, 241);
+            outline: none;
+        }
+
+
+        .form input {
+            color: #413c3c;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .sub {
+            font-family: "Arial Black", sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            background: #1e90ff;
+            width: 100px;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+            -webkit-transform-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transform-property: box-shadow, transform;
+            transition-property: box-shadow, transform;
+        }
+
+
+        .sub:hover, .sub:focus, .sub:active {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+        
+        .sayt {
+            padding-top: 30px;
+            padding-bottom: 10px;
+        }
+        .form .btn-accc {
+            width: 25%;
+            height: 40px;
+            background-color: #0080ff;
+            border-radius: 5px;
+        }
+
+        .form .btn-accc a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <section id="home-about">
+        <h2>Accountga Kirish </h2>
+
+    </section>
+
+    <body>
+            <div class="form login">
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <h3>Accauntingizga kiring </h3>
+            {{ form|crispy }}
+            <button class="sub btn-ac" type="submit">Submit</button>
+        </form>
+
+        <h3 class="sayt">Saytimizda yangimisiz ?</h3>
+        <button class="sub btn-accc"><a href="{% url 'registration' %}">Register</a></button>
+
+    </div>
+    </body>
+
+
+
+
+{% endblock %}

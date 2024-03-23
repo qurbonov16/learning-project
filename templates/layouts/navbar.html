@@ -1,0 +1,87 @@
+{% load static %}
+
+{% block extra_css %}
+    <style>
+        nav {
+            padding: 0vw 8vw 0 8vw;
+        }
+
+        nav img {
+            width: 120px;
+        }
+    </style>
+
+{% endblock %}
+
+{% block navbar %}
+
+    <!-- Navbar -->
+    {% if user.is_authenticated %}
+        {% if user.is_superuser %}
+            <nav>
+                <img src="{% static 'main/imgs/logo-no-background.png' %}" alt="">
+                <h3>Salom {{ user.username }}</h3>
+                {% if user.is_teacher %}
+                    <h3>Sen teachersan</h3>
+                {% else %}
+                    <h3>Sen Superusersan</h3>
+                {% endif %}
+
+                <div class="navigation">
+                    <ul>
+                        <i id="menu-close" class="fa-solid fa-circle-xmark"></i>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">Biz haqimizda</a></li>
+                        <li><a href="">Vazifa Berish</a></li>
+                        <li><a href="{% url 'blog' %}">Kurslar</a></li>
+                        <li><a href="{% url 'logout' %}">Chiqish</a></li>
+
+                    </ul>
+                    <img src="{% static 'main/imgs/burger.jpg' %}" id="menu-img" alt="">
+                </div>
+            </nav>
+
+        {% else %}
+            <nav>
+                <img src="{% static 'main/imgs/logo-no-background.png' %}" alt="">
+                <h3>Salom {{ user.username }}</h3>
+
+
+                <div class="navigation">
+                    <ul>
+                        <i id="menu-close" class="fa-solid fa-circle-xmark"></i>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">Biz haqimizda</a></li>
+                        <li><a href="">Vazifalarim</a></li>
+                        <li><a href="{% url 'blog' %}">Kurslar</a></li>
+                        <li><a href="{% url 'logout' %}">Chiqish</a></li>
+
+
+                    </ul>
+
+                    <img src="{% static 'main/imgs/burger.jpg' %}" id="menu-img" alt="">
+                </div>
+            </nav>
+        {% endif %}
+    {% else %}
+
+        <nav>
+            <img src="{% static 'main/imgs/logo-no-background.png' %}" alt="">
+
+
+            <div class="navigation">
+                <ul>
+                    <i id="menu-close" class="fa-solid fa-circle-xmark"></i>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">Biz haqimizda</a></li>
+                    <li><a href="{% url 'contact' %}">Aloqa</a></li>
+                    <li><a href="{% url 'registration' %}">Kirish</a></li>
+                    <li><a href="{% url 'blog' %}">Kurslar</a></li>
+                </ul>
+
+
+                <img src="{% static 'main/imgs/burger.jpg' %}" id="menu-img" alt="">
+            </div>
+        </nav>
+    {% endif %}
+{% endblock %}

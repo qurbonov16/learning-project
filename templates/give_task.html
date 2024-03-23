@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'main/css/new.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="form">
+        <form action="">
+            <h4>Vazifa Berish</h4>
+            <p>Bu yerda siz o'quvchilar uchun vazifa yaratishining mumkin.</p>
+
+            <div class="form-row">
+                <input type="text" name="" id="" placeholder="Your Name">
+                <input type="text" placeholder="Email*">
+            </div>
+
+            <div class="form-col">
+                <input type="text" placeholder="Subject">
+            </div>
+
+            <div class="form-col">
+                <textarea name="" id="" cols="30" rows="10" placeholder="How can we help ?"></textarea>
+            </div>
+
+            <div class="form-col">
+                <button>Sent Message</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

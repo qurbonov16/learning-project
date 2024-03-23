@@ -1,0 +1,81 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+
+    <link rel="stylesheet" href="{% static 'main/css/house.css' %}">
+    <style>
+        #home-about {
+            background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url({% static 'main/imgs/back-3.jpg' %});
+
+        }
+
+        #contact .getin {
+            width: 350px;
+        }
+
+        #contact .second {
+            width: 50%;
+            height: 100vh;
+            border-radius: 10px;
+        }
+
+        #contact .second img {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="home-about">
+        <h2>Aloqaga Chiqish</h2>
+
+    </section>
+
+
+    <section id="contact">
+        <div class="getin">
+            <h2>Aloqaga Chiqish</h2>
+            <p>Yordam Kerakmi ? Unda adminstratorga murojat qiling.</p>
+
+            <div class="getin-details">
+                <h3>Uy Manzili</h3>
+                <div>
+                    <i class="fa fa-home get"></i>
+                    <p>Toshkent, Yashnabod Tumani, Jorabek M, M.Ashrafiy 9-uy</p>
+                </div>
+                <h3>Telefon Raqam</h3>
+                <div>
+                    <i class="fas fa-phone-alt get"></i>
+                    <p>+998 94 634 24 46</p>
+                </div>
+                <h3>Yordam</h3>
+                <div>
+                    <i class="fa fa-award get"></i>
+                    <p>anadearmas@gmail.com</p>
+                </div>
+
+                <h3>Follow Us</h3>
+                <div class="pro-links">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="second">
+            {#            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1499.238675394323!2d69.31695872878802!3d41.2767144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef5955b2044d3%3A0x7aa89cf848e17ee9!2sUzbek%20Doner!5e0!3m2!1sru!2s!4v1710245724741!5m2!1sru!2s"#}
+            {#                style="border:0;" allowfullscreen="" loading="lazy"#}
+            {#                referrerpolicy="no-referrer-when-downgrade"></iframe>#}
+
+            <img src="{% static 'main/imgs/anade.jpg' %}" alt="">
+        </div>
+    </section>
+
+
+
+{% endblock %}

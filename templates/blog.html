@@ -1,0 +1,43 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <style>
+        #home {
+            background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url({% static 'main/imgs/back.jpg' %});
+
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="home">
+        <h2>Kurslar ...</h2>
+
+    </section>
+
+
+
+    <section id="blog">
+        <div class="blogs">
+            {% for w in works %}
+                <div class="post">
+                    <img src="imgs/a1.jpg" alt="">
+                    <h3>{{ w.level_name }}</h3>
+                    <p>{{ w.text }}</p>
+                    <a href="{% url 'course-dt' w.id %}">Ko'roq O'qing </a>
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="cate">
+            <h2>Ingliz Tili Kategoriyalari</h2>
+
+            {% for work in works %}
+                <hr>
+                <a href="">{{ work.level_name }}</a>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

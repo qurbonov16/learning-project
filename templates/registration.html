@@ -1,0 +1,182 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+
+{% block extra_css %}
+    {#    <link rel="stylesheet" href="{% static 'main/css/.css' %}">#}
+
+    <style>
+
+        {##registration  {#}
+        {#    background-image: linear-gradient(145deg, var(--primary), var(--secondary));#}
+
+
+        .sub {
+            font-family: "Arial Black", sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            background: #1e90ff;
+            width: 100px;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+            -webkit-transform-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transform-property: box-shadow, transform;
+            transition-property: box-shadow, transform;
+        }
+
+
+        .sub:hover, .sub:focus, .sub:active {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        .ac {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+
+        #registration {
+            padding: 6vw 8vw 6vw 8vw;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(99, 112, 168, 0.5), rgba(81, 91, 233, 0.5)), url({% static 'main/imgs/back.jpg' %});
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #registration .reminder {
+            background-image: linear-gradient(145deg, var(--primary), var(--secondary));
+        }
+
+        #registration .reminder h1 {
+            color: #fff;
+        }
+
+        #registration .reminder .time {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        #registration .reminder .time .date {
+            text-align: center;
+            padding: 13px 33px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border-radius: 5px;
+            margin: 0 5px 10px 5px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+
+        #registration .form {
+            background-color: #fff;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+        }
+
+        #registration .form input {
+            margin: 15px 0;
+            padding: 15px 10px;
+            border: 1px solid rgb(84, 40, 241);
+            outline: none;
+        }
+
+
+        #registration .form input {
+            color: #413c3c;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        #registration .form .btn {
+            margin-top: 20px;
+        }
+
+        #registration .form a.yellow {
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 13px 35px;
+            background-color: #fff;
+            font-weight: 600;
+            border-radius: 5px;
+            color: #fff;
+            background: #fdc93b;
+            transition: 0.3s ease;
+        }
+
+        #registration .form a.yellow:hover {
+            color: rgb(21, 21, 100);
+            background: #fff;
+        }
+
+
+    </style>
+{% endblock %}
+
+{% block content %}
+    <!-- Registration -->
+    <section id="registration">
+        <div class="reminder">
+            <p>Sifatli va ajoyib darslar !</p>
+            <h1>Buni Olish uchun Royxatdan o'ting !</h1>
+
+            <div class="time">
+
+                <div class="date">
+                    I <br>
+                </div>
+                <div class="date">
+                    E <br>
+                </div>
+                <div class="date">
+                    L <br>
+                </div>
+                <div class="date">
+                    T <br>
+                </div>
+
+                <div class="date">
+                    S <br>
+                </div>
+
+            </div>
+
+            <h3 class="ac">Accountingiz allaqachon bormi ? Unda unga kiring !</h3>
+            <a class="sub" href="{% url 'login' %}">Login</a>
+        </div>
+
+
+        <!-- form -->
+        <div class="form">
+            <form action="{% url 'registration' %}" method="post">
+                {% csrf_token %}
+                <h3>Yangi Account Yarating </h3>
+                {{ form|crispy }}
+
+                <button class="sub" type="submit">Send</button>
+
+            </form>
+
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <style>
+        button {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            background: #fdc93b;
+            outline: none;
+            border: none;
+            font-weight: 600;
+            width: 2    0%;
+            padding: 13px 25px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: var(--secondary);
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+            -webkit-transform-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transform-property: box-shadow, transform;
+            transition-property: box-shadow, transform;
+        }
+        button a {
+            text-decoration: none;
+        }
+
+        button:hover, button:focus, button:active {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="home-about">
+        <h2>Kategoriya haqida.. </h2>
+
+    </section>
+
+
+    <section id="course-inner">
+        {% for c in courses %}
+            <div class="overview">
+                <img class="course-img" src="{{ c.imageURL }}" alt="">
+
+                <div class="course-head">
+                    <div class="c-name">
+                        <h2>{{ c.level_name }}</h2>
+
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+
+                        <p>{{ c.text }}</p>
+
+                    </div>
+
+                    <span>{{ c.price_level }}</span>
+
+                </div>
+
+                <button class="expert-box btn"><a href="{% url 'blog' %}">Back</a></button>
+
+
+            </div>
+        {% endfor %}
+
+
+    </section>
+{% endblock %}
+

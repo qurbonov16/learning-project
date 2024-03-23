@@ -1,0 +1,105 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'main/css/house.css' %}">
+
+    <style>
+        #home-about {
+            background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url({% static 'main/imgs/bac.jpg' %});
+
+        }
+
+        .trust-img {
+            width: 100%;
+        }
+
+        .trust-img .rasm{
+            width: 120px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="home-about">
+        <h2>ZetSchool Haqida</h2>
+
+    </section>
+
+
+    <section id="about-cont">
+        <div class="about-img">
+            <img src="{% static 'main/imgs/about-2.jpg' %}" alt="">
+        </div>
+
+        <div class="about-text">
+            <h2>ZetSchool Ingliz Tili O'quv Kursiga Xush Kelibsiz</h2>
+            <p>IELTS imtihonida yuqori ball olishingiz mumkin bo'lgan mukammal ta'lim!</p>
+
+            <div class="about-fe">
+                <img src="{% static 'main/imgs/about-3.png' %}" alt="">
+
+                <div class="fa-text">
+                    <h5>400+ Studentlar !</h5>
+                    <p>Siz o'qituvchilarimizdan biri bilan individual yondashuv bilan boshlashingiz va tugatishingiz mumkin!</p>
+                </div>
+            </div>
+
+            <div class="about-fe">
+                <img src="{% static 'main/imgs/about-4.jpg' %}" alt="">
+
+                <div class="fa-text">
+                    <h5>Mantiqiy Fikrlash  </h5>
+                    <p>Kurs davomida siz ingliz tilida o'ylab javob bera olishni huddi Inglizlar kabi o'ylashni o'rganasiz</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Feature -->
+  <section id="feature">
+        <h1>Ajoyib Xususiyatlar</h1>
+        <p>Malakali ustozlar tomonidan individual tarzda o'qitlasiz va sifatga kafolat beramiz</p>
+
+        <div class="fea-base">
+            <div class="fea-box">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Stipendiya ta'minoti</h3>
+                <p>Albatta agar siz kurs davomida o'zingizni ko'rsatib bera olsangiz, biz sizga stipendiya beramiz</p>
+            </div>
+            <div class="fea-box">
+                <i class="fa-solid fa-passport"></i>
+                <h3>Onlayn Kurslar </h3>
+                <p>Bizda qo'shimcha support o'qituvchilar ham bor, agar siz ma'lum sababga ko'ra darsga kela olmasangiz,
+                    xavotirlanmang onlayn kurs bor</p>
+            </div>
+            <div class="fea-box">
+                <i class="fas fa-award"></i>
+                <h3>Global Sertifikat (IELTS)</h3>
+                <p>Ingliz tili kursing ohiri bu IELTS imtihoni. Siz kursni tugatganingizdan so'ng IELTS topshirasiz, Bu
+                    sizni Ingliz tili darajangizni aniqlab beradi.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Trusted By -->
+    <section id="trust">
+        <h1>Homiylar</h1>
+        <p>Sifatli kursimizga homiy bo'gan kompaniyalar</p>
+
+        <div class="trust-img">
+            <img  class="rasm" src="{% static 'main/imgs/imgs/1.png' %}" alt="">
+            <img src="{% static 'main/imgs/imgs/2.png' %}" alt="">
+            <img class="rasm" src="{% static 'main/imgs/imgs/3.png' %}" alt="">
+            <img class="rasm" src="{% static 'main/imgs/imgs/4.png' %}" alt="">
+            <img class="rasm" src="{% static 'main/imgs/imgs/5.jpg' %}" alt="">
+        </div>
+
+
+    </section>
+{% endblock %}
